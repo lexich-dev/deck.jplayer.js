@@ -23,9 +23,10 @@ This module adds a video narration with jplayer to slides
     function changeSlides(e, from, to) {
         if (player) {
             currentSegment = timeline[to];
+            console.log(currentSegment);
             if (!currentPlayerStatus) {
                 player.jPlayer("play", currentSegment.from);
-            } else if (currentTime < currentSegment.from || currentTime > currentSegment.to || currentPlayerStatus.paused || currentPlayerStatus.ended) {
+            } else if (currentTime <= currentSegment.from || currentTime > currentSegment.to || currentPlayerStatus.paused || currentPlayerStatus.ended) {
                 player.jPlayer("play", currentSegment.from);
             }
         }
@@ -40,6 +41,7 @@ This module adds a video narration with jplayer to slides
         }
         $.each(timeline, function (i, $el) {
             if (currentSegment != $el && $el.from <= ev.currentTime && $el.to > ev.currentTime) {
+                console.log("change slide " + $el.index);
                 currentSegment = $el;
                 $.deck('go', $el.index);
                 return false;
@@ -56,18 +58,11 @@ This module adds a video narration with jplayer to slides
         }
     }
 
-    function pauseSlides(ev) {
-    }
-
-    function stopSlides(ev) {
-    }
-
 
     $d.bind('deck.init', function() {
 
             if ($.jPlayer == "undefined") {
                 throw "Please init jPlayer before using deck.jplayer.js plugin.";
-                return;
             }
 
             var opts = $.deck('getOptions');
@@ -85,16 +80,9 @@ This module adds a video narration with jplayer to slides
                 startSlides(event.jPlayer.status);
             });
 
-            player.bind($.jPlayer.event.pause, function(event) {
-                pauseSlides(event.jPlayer.status);
-            });
-
-            player.bind($.jPlayer.event.stop, function(event) {
-                stopSlides(event.jPlayer.status);
-            });
 
             player.bind($.jPlayer.event.timeupdate, function(event) {
-                currentTime = Math.floor(event.jPlayer.status.currentTime);
+                currentTime = event.jPlayer.status.currentTime;
                 currentPlayerStatus = event.jPlayer.status;
                 updateSlides(event.jPlayer.status);
             });
