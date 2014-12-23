@@ -23,7 +23,7 @@ This module adds a video narration with jplayer to slides
     function changeSlides(e, from, to) {
         if (player) {
             currentSegment = timeline[to];
-            console.log(currentSegment);
+            //console.log(currentSegment);
             if (!currentPlayerStatus) {
                 player.jPlayer("play", currentSegment.from);
             } else if (currentTime <= currentSegment.from || currentTime > currentSegment.to || currentPlayerStatus.paused || currentPlayerStatus.ended) {
@@ -41,7 +41,7 @@ This module adds a video narration with jplayer to slides
         }
         $.each(timeline, function (i, $el) {
             if (currentSegment != $el && $el.from <= ev.currentTime && $el.to > ev.currentTime) {
-                console.log("change slide " + $el.index);
+                //console.log("change slide " + $el.index);
                 currentSegment = $el;
                 $.deck('go', $el.index);
                 return false;
