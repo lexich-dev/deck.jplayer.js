@@ -8,7 +8,7 @@ Usage:
  - download jPlayer from http://jplayer.org/download/
  - on document ready init player first
  - then link player with deck slides
-
+<pre>
 	<script type="text/javascript">
         $(document).ready(function () {
             $("#jquery_jplayer_1").jPlayer({
@@ -161,4 +161,4 @@ Usage:
             </div>
         </div>		
 		
-		
+</pre>		
