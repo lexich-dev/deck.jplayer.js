@@ -40,18 +40,18 @@ Usage:
 
 .... YOUR SLIDES .....
 
-<div class="deck-container">
+		<div class="deck-container">
             <p class="deck-status">
                 <span class="deck-status-current"></span>
                 /
                 <span class="deck-status-total"></span>
             </p>
             
-            <section class="slide deck-previous" data-narrator-duration="4" >
+            <div class="slide deck-previous" data-narrator-duration="4" >
                 <h1>The peach open movie project presents</h1>
-            </section>
+            </div>
 
-            <section class="slide" data-narrator-duration="3" >
+            <div class="slide" data-narrator-duration="3" >
                 <h2>The Bunny hole</h2>
                 <blockquote>
                     <p>Fantastic place</p>
@@ -61,50 +61,50 @@ Usage:
                         <li>Underground</li>
                     </ul>
                 </blockquote>
-            </section>
+            </div>
 
-            <section class="slide" data-narrator-duration="4" >
+            <div class="slide" data-narrator-duration="4" >
                 <h1>One Big Rabbit</h1>
                 <blockquote cite="http://example.com">
                     <p>A white and big, a super nice animal without any thoughts in its small head.</p>
                 </blockquote>
-            </section>
+            </div>
 
-            <section class="slide" data-narrator-duration="6" >
+            <div class="slide" data-narrator-duration="6" >
                 <h1>And three ungry rodents</h1>
                 <blockquote>
                     <p>Ugly rodents without soul and black dark hearts.</p>
                 </blockquote>
                     
-            </section>
+            </div>
 
-            <section class="slide" data-narrator-duration="6">
+            <div class="slide" data-narrator-duration="6">
                 <h1>And one giant playback</h1>
                 <blockquote>
                     <p>With powerful opposition.</p>
                 </blockquote>
-            </section>
+            </div>
 
-            <section class="slide" data-narrator-duration="4">
+            <div class="slide" data-narrator-duration="4">
                 <h1>Get ready</h1>
                 <blockquote>
                     <p>Use your hands</p>
                 </blockquote>
-            </section>
+            </div>
 
-            <section class="slide" data-narrator-duration="3">
+            <div class="slide" data-narrator-duration="3">
                 <h1>Big Buck Bunny</h1>
                 <blockquote>
                     <p>He is the best of the best!</p>
                 </blockquote>
-            </section>
+            </div>
 
-            <section class="slide" data-narrator-duration="5">
+            <div class="slide" data-narrator-duration="5">
                 <h1>Coming soon</h1>
                 <blockquote>
                     <p>Be ready</p>
                 </blockquote>
-            </section>
+            </div>
 
 
             <div aria-role="navigation">
