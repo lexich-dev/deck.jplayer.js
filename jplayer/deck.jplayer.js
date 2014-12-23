@@ -32,7 +32,13 @@ This module adds a video narration with jplayer to slides
     }
 
     function updateSlides(ev) {
-        $.each(timeline, function(i, $el) {
+        if (ev.ended) {
+            currentTime = 0;
+            currentSegment = null;
+            currentPlayerStatus = null;
+            return;
+        }
+        $.each(timeline, function (i, $el) {
             if (currentSegment != $el && $el.from <= ev.currentTime && $el.to > ev.currentTime) {
                 currentSegment = $el;
                 $.deck('go', $el.index);
@@ -40,7 +46,6 @@ This module adds a video narration with jplayer to slides
             }
             return true;
         });
-
     }
 
     function startSlides(ev) {
